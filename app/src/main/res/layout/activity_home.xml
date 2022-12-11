@@ -8,10 +8,12 @@
     android:background="@drawable/bg"
     android:orientation="vertical">
 
+
     <androidx.cardview.widget.CardView
         android:id="@+id/Terkini"
-        android:layout_width="231dp"
-        android:layout_height="89dp"
+        android:layout_width="287dp"
+        android:layout_height="121dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.41"
@@ -22,54 +24,83 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/terkini1" />
+            android:background="@drawable/terkini1" />
+
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/slider"
+            android:layout_width="287dp"
+            android:layout_height="121dp"
+            app:auto_cycle="true"
+            app:corner_radius="20"
+            app:delay="0"
+            app:error_image="@color/white"
+            app:period="3000"
+            app:placeholder="@color/black">
+
+        </com.denzcoskun.imageslider.ImageSlider>
     </androidx.cardview.widget.CardView>
 
     <ImageButton
-        android:layout_width="136dp"
-        android:layout_height="131dp"
-        android:background="@drawable/menu_form"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.113"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.376" />
-
-    <ImageButton
         android:id="@+id/cekStatus"
-        android:layout_width="136dp"
-        android:layout_height="131dp"
+        android:layout_width="94dp"
+        android:layout_height="90dp"
         android:background="@drawable/cek_permohonan"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.778"
+        app:layout_constraintHorizontal_bias="0.769"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.376" />
+        app:layout_constraintVertical_bias="0.38" />
 
     <ImageButton
         android:id="@+id/CS"
-        android:layout_width="136dp"
-        android:layout_height="131dp"
+        android:layout_width="93dp"
+        android:layout_height="87dp"
         android:background="@drawable/costumerservice"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintHorizontal_bias="0.22"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.643" />
+        app:layout_constraintVertical_bias="0.581" />
 
     <ImageButton
         android:id="@+id/SOP"
-        android:layout_width="136dp"
-        android:layout_height="131dp"
+        android:layout_width="93dp"
+        android:layout_height="87dp"
         android:background="@drawable/menu_sop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.81"
+        app:layout_constraintHorizontal_bias="0.768"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.643" />
+        app:layout_constraintVertical_bias="0.58" />
+
+    <ImageButton
+        android:id="@+id/formpermohonan"
+        android:layout_width="93dp"
+        android:layout_height="87dp"
+        android:background="@drawable/menu_form"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.226"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.383" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="228dp"
+        android:layout_height="28dp"
+        android:text="Alur Permohonan Informasi"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.278"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.714" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
