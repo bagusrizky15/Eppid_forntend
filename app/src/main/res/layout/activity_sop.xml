@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SOP">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="414dp"
@@ -19,6 +28,7 @@
         app:navigationIcon="@drawable/buttonback">
 
         <RelativeLayout
+            android:id="@+id/relative"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
@@ -36,18 +46,106 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <Button
-        android:id="@+id/button_sop"
-        android:layout_width="322dp"
-        android:layout_height="64dp"
-        android:backgroundTint="#D1291E"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.164" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="414dp"
+            android:layout_height="662dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/toolbar"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
+            <Button
+                android:id="@+id/SOP_Konsekuensi"
+                android:layout_width="326dp"
+                android:layout_height="73dp"
+                android:layout_marginTop="32dp"
+                android:backgroundTint="#D1291E"
+                android:text="SOP Uji Konsekuensi"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <Button
+                android:id="@+id/SOP_Pengumpulan"
+                android:layout_width="319dp"
+                android:layout_height="75dp"
+                android:layout_marginTop="28dp"
+                android:backgroundTint="#D1291E"
+                android:text="SOP Pengumpulan, Pengelolaan, dan Pendokumentasian Informasi Publik"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.505"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/SOP_Konsekuensi" />
+
+            <Button
+                android:id="@+id/SOP_Penetapan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:backgroundTint="#D1291E"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:text="SOP Penetapan dan Pemutakhiran Daftar Informasi Publik"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/SOP_Pengumpulan" />
+
+            <Button
+                android:id="@+id/SOP_Pendokumentasian"
+                android:layout_width="318dp"
+                android:layout_height="71dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#D1291E"
+                android:text="SOP Pendokumentasian Informasi Publik"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.472"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/SOP_Penetapan" />
+
+            <Button
+                android:id="@+id/SOP_DokumentasiInfo"
+                android:layout_width="318dp"
+                android:layout_height="71dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#D1291E"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:text="SOP Pendokumentasian Informasi Dikecualikan Tahun 2019"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/SOP_Pendokumentasian" />
+
+            <Button
+                android:id="@+id/SOP_Penanganan"
+                android:layout_width="318dp"
+                android:layout_height="71dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="#D1291E"
+                android:text="SOP Penanganan Keberatan Informasi Publik"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.65"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/SOP_DokumentasiInfo" />
+
+            <Button
+                android:layout_width="318dp"
+                android:layout_height="71dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#D1291E"
+                android:text="SOP Penanganan Keberatan Informasi Publik"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/SOP_Penanganan"
+                tools:layout_editor_absoluteX="52dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
