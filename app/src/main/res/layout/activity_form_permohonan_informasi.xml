@@ -58,8 +58,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
-            android:layout_width="311dp"
-            android:layout_height="406dp"
+            android:layout_width="308dp"
+            android:layout_height="483dp"
             android:layout_marginTop="64dp"
             android:background="@drawable/form_panel"
             app:layout_constraintEnd_toEndOf="parent"
@@ -101,7 +101,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Nomor Telepon/hp"
+                android:text="Nomor Telepon "
                 android:textColor="@color/black"
                 android:textSize="13sp"
                 android:textStyle="bold"
@@ -111,13 +111,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/etNama" />
 
             <EditText
-                android:id="@+id/etNoktp"
+                android:id="@+id/etNoTlp"
                 android:layout_width="244dp"
                 android:layout_height="36dp"
                 android:layout_gravity="center_horizontal|center"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/edit_text_panel"
-                android:hint="Masukan Nomor Identitas"
+                android:hint="Masukan Nomor Telepon"
                 android:inputType="number"
                 android:textSize="13sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -137,7 +137,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.084"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etNoktp" />
+                app:layout_constraintTop_toBottomOf="@+id/etNoTlp" />
 
             <EditText
                 android:id="@+id/etAlamat"
@@ -146,7 +146,7 @@
                 android:layout_gravity="center_horizontal|center"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/edit_text_panel"
-                android:hint="Masukan Nomor Identitas"
+                android:hint="Masukan Alamat"
                 android:textSize="13sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.277"
@@ -180,6 +180,35 @@
                 app:layout_constraintHorizontal_bias="0.343"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="No KTP"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.081"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etPekerjaan" />
+
+            <EditText
+                android:id="@+id/etNoktp"
+                android:layout_width="244dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center_horizontal|center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit_text_panel"
+                android:hint="Masukan Nomor Telepon"
+                android:inputType="number"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.298"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
@@ -236,27 +265,185 @@
 
         <TextView
             android:id="@+id/rincian"
-            android:layout_width="152dp"
-            android:layout_height="36dp"
-            android:layout_marginTop="24dp"
+            android:layout_width="234dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
             android:gravity="center"
-            android:text="Rincian kebutuhan"
+            android:text="Permohonan Informasi "
             android:textColor="@color/black"
             android:textSize="17sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.123"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="293dp"
-            android:layout_height="342dp"
-            android:layout_marginTop="16dp"
+            android:id="@+id/constraintLayout3"
+            android:layout_width="323dp"
+            android:layout_height="512dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/form_panel"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rincian">
+            app:layout_constraintTop_toBottomOf="@+id/rincian"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:id="@+id/RincianInformasi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="Rincian Informasi Yang Dibutuhkan"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.133"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/etRincian"
+                android:layout_width="273dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center_horizontal|center"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/edit_text_panel"
+                android:inputType="text"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.301"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/RincianInformasi" />
+
+
+            <TextView
+                android:id="@+id/TujuanInformasi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Tujuan Informasi"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.036"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etRincian" />
+
+            <EditText
+                android:id="@+id/etTujuan"
+                android:layout_width="275dp"
+                android:layout_height="41dp"
+                android:layout_gravity="center_horizontal|center"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text_panel"
+                android:inputType="text"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.304"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TujuanInformasi" />
+
+            <TextView
+                android:id="@+id/informasi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Cara Memperoleh Informasi"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.05"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etTujuan" />
+
+            <EditText
+                android:id="@+id/etPerolehInformasi"
+                android:layout_width="278dp"
+                android:layout_height="44dp"
+                android:layout_gravity="center_horizontal|center"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/edit_text_panel"
+                android:hint="Melihat / Membaca / Mendengarkan / Mencatat"
+                android:inputType="text"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.341"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/informasi" />
+
+            <TextView
+                android:id="@+id/informasi2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Cara Memperoleh Informasi "
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.088"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etPerolehInformasi" />
+
+            <EditText
+                android:id="@+id/etJenisflie"
+                android:layout_width="279dp"
+                android:layout_height="44dp"
+                android:layout_gravity="center_horizontal|center"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/edit_text_panel"
+                android:hint="Hardcopy / Softcopy"
+                android:inputType="number"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.225"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/informasi2" />
+
+            <TextView
+                android:id="@+id/informasi3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Cara Mendapat Salinan Informasi"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.122"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etJenisflie" />
+
+            <EditText
+                android:id="@+id/etSalinan"
+                android:layout_width="268dp"
+                android:layout_height="49dp"
+                android:layout_gravity="center_horizontal|center"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/edit_text_panel"
+                android:hint="Mengambil / Email"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.277"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/informasi3" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/Buttonsubmit"
+            android:layout_width="193dp"
+            android:layout_height="42dp"
+            android:backgroundTint="#D1291E"
+            android:text="Submit"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
