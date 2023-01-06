@@ -4,11 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Form_Permohonan_Informasi">
+    tools:context=".Form_Permohonan_Informasi"
+    android:background="@color/white">
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -311,6 +314,7 @@
                 android:layout_gravity="center_horizontal|center"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/edit_text_panel"
+                android:hint="Masukan Rincian Informasi"
                 android:inputType="text"
                 android:textSize="13sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -326,8 +330,9 @@
                 android:layout_marginTop="20dp"
                 android:text="Tujuan Informasi"
                 android:textColor="@color/black"
+                android:hint="Masukan Tujuan Informasi"
+                android:inputType="text"
                 android:textSize="13sp"
-                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.036"
                 app:layout_constraintStart_toStartOf="parent"
@@ -446,4 +451,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </ScrollView>

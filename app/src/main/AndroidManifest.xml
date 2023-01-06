@@ -17,20 +17,21 @@
         android:theme="@style/Theme.EppidBawaslu"
         tools:targetApi="31">
         <activity
+            android:name=".Regulasi"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
-
         <activity
             android:name=".Form_Permohonan_Informasi"
             android:exported="false" />
         <activity
             android:name=".SOP"
             android:exported="false" />
-
         <activity
             android:name=".Home"
-            android:label="nav"
-            android:exported="true">
+            android:exported="true"
+            android:label="nav">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -2,18 +2,15 @@ package com.example.eppidbawaslu
 
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toolbar
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.appcompat.app.AppCompatActivity
 
-class SOP : AppCompatActivity() {
+class IntentActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sop)
-
         val SOP_Konsekuensi : Button = findViewById(R.id.SOP_Konsekuensi)
 
         SOP_Konsekuensi.setOnClickListener {
@@ -42,7 +39,7 @@ class SOP : AppCompatActivity() {
         }
 
         val SOP_Pendokumentasian : Button = findViewById(R.id.SOP_Pendokumentasian)
-        SOP_Pendokumentasian.setOnClickListener { 
+        SOP_Pendokumentasian.setOnClickListener {
             val openURL = Intent(Intent.ACTION_VIEW)
 
             openURL.data = Uri.parse("https://drive.google.com/file/d/1X5HRTQdwlO5MrcRkvIg-uIEL2JJKQZQW/view")
@@ -85,7 +82,12 @@ class SOP : AppCompatActivity() {
             val openURL = Intent(Intent.ACTION_VIEW)
             openURL.data = Uri.parse("http://ppid.sleman.bawaslu.go.id/content/448/SOP-Pelayanan-Informasi-Kepemiluan/")
         }
-    }
+        val toolbar : Toolbar = findViewById(R.id.toolbar)
+        toolbar.setOnClickListener{
+            val intent = Intent(this@IntentActivity, Home::class.java)
+            startActivity(intent)
+        }
 
+    }
 
 }
