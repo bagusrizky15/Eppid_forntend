@@ -13,17 +13,20 @@
     android:layout_height="match_parent"
         android:background="@drawable/bg">
 
+        <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/slider"
+                android:layout_width="328dp"
+                android:layout_height="126dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.542"
+                app:layout_constraintStart_toStartOf="parent"
+                app:iss_corner_radius="5"
+                app:iss_selected_dot="@drawable/default_selected_dot"
+                app:iss_unselected_dot="@drawable/default_selected_dot"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.092"/>
 
-        <com.denzcoskun.imageslider.ImageSlider
-            android:id="@+id/slider"
-            android:layout_width="328dp"
-            android:layout_height="126dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.542"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.092" />
 
         <ImageButton
             android:id="@+id/cekStatus"
@@ -145,7 +148,7 @@
             android:layout_width="228dp"
             android:layout_height="28dp"
             android:layout_marginTop="24dp"
-            android:text="Informasi OPub"
+            android:text="Informasi Publik"
             android:textColor="@color/black"
             android:textSize="16dp"
             android:textStyle="bold"
@@ -170,6 +173,7 @@
             android:layout_width="325dp"
             android:layout_height="136dp"
             android:layout_marginTop="24dp"
+            android:clickable="true"
             app:iss_error_image="@android:color/white"
             app:iss_period="1000"
             app:iss_placeholder="@android:color/white"
