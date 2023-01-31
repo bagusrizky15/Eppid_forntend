@@ -1,26 +1,23 @@
 package com.example.eppidbawaslu
 
-import android.content.AsyncQueryHandler
 import android.content.Intent
-import android.media.Image
 import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
-import android.widget.Button
+import android.widget.AdapterView
 import android.widget.ImageButton
+import android.widget.ListView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
-import com.bumptech.glide.Glide.init
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
-import com.example.eppidbawaslu.databinding.ActivityMainBinding
-import java.text.FieldPosition
 import kotlin.math.abs
 
 class Home : AppCompatActivity() {
@@ -29,26 +26,19 @@ class Home : AppCompatActivity() {
     private lateinit var imageList : ArrayList<Int>
     private lateinit var adapter :ImageAdapter
 
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
-                setContentView(R.layout.activity_home)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_home)
 
             val imageSlider = findViewById<ImageSlider>(R.id.imageSlider)
             val imageSlider2 = findViewById<ImageSlider>(R.id.imageSlider2)
             val imageList = ArrayList<SlideModel>()
             val imagelist2 = ArrayList<SlideModel>()
 
-            imageList.add(SlideModel(R.drawable.regulasi))
-            imageList.add(SlideModel(R.drawable.profibawaslu))
-            imageSlider.setImageList(imageList, ScaleTypes.FIT)
+        imageList.add(SlideModel(R.drawable.regulasi))
+        imageList.add(SlideModel(R.drawable.profibawaslu))
+        imageSlider.setImageList(imageList, ScaleTypes.FIT)
 
-            val Regulasi : Button = findViewById(R.id.imageSlider)
-            Regulasi.setOnClickListener {
-                val openURL= Intent(Intent.ACTION_VIEW)
-                //openurl ke web
-                openURL.data= Uri.parse("https://drive.google.com/file/d/1ZqAhCm_8_VyhN6e1Ffyov5XPvv-c9hsT/view")
-                startActivity(openURL)
-            }
             imagelist2.add(SlideModel(R.drawable.standarlayanan))
             imagelist2.add(SlideModel(R.drawable.informasilayanan))
             imagelist2.add(SlideModel(R.drawable.informasipublik))
@@ -56,6 +46,21 @@ class Home : AppCompatActivity() {
             init()
             setUpTransformer()
 
+        val listView = findViewById<ListView>(R.id.ListView)
+        val list = mutableListOf<ImageData>()
+
+        listView.adapter = AdapterClick(this, com.denzcoskun.imageslider.R.layout.pager_row, list)
+        list.add(ImageData(R.drawable.regulasi))
+        list.add(ImageData(R.drawable.profibawaslu))
+
+        listView.setOnItemClickListener { parent:AdapterView<*>, view:View, position:Int, id:Long ->
+            if (position == 0){
+                Toast.makeText(this@Home,"Yey! di klik :), regulasi", Toast.LENGTH_LONG).show()
+            }
+            if (position == 1){
+                Toast.makeText(this@Home,"Yey! di klik :), Profil Bawaslu", Toast.LENGTH_LONG).show()
+            }
+        }
             viewPager2.registerOnPageChangeCallback(object  : ViewPager2.OnPageChangeCallback(){
                 override fun onPageSelected(position: Int){
                     super.onPageSelected(position)
@@ -119,15 +124,14 @@ class Home : AppCompatActivity() {
         viewPager2 = findViewById(R.id.slider)
     }
 
-
     private  fun init(){
         viewPager2 = findViewById(R.id.slider)
         handler = Handler(Looper.myLooper()!!)
         imageList = ArrayList()
 
-        imageList.add(R.drawable.regulasi)
-        imageList.add(R.drawable.regulasi)
-        imageList.add(R.drawable.regulasi)
+        imageList.add(R.drawable.infolain)
+        imageList.add(R.drawable.infolain)
+        imageList.add(R.drawable.infolain)
 
         adapter = ImageAdapter(imageList, viewPager2)
 
@@ -139,3 +143,4 @@ class Home : AppCompatActivity() {
     }
 
 }
+
