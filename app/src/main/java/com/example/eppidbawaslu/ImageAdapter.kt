@@ -32,8 +32,6 @@ RecyclerView.Adapter<ImageAdapter.ImageViewHolder>(){
 
         holder.imageView.setImageResource(imageList[position])
 
-
-
     }
 
     override fun getItemCount(): Int {

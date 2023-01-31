@@ -5,8 +5,11 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.View
+import android.view.View.OnClickListener
 import android.widget.AdapterView
+import android.widget.AdapterView.OnItemClickListener
 import android.widget.ImageButton
 import android.widget.ListView
 import android.widget.Toast
@@ -17,6 +20,7 @@ import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.constants.ScaleTypes
+import com.denzcoskun.imageslider.interfaces.ItemClickListener
 import com.denzcoskun.imageslider.models.SlideModel
 import kotlin.math.abs
 
@@ -39,28 +43,45 @@ class Home : AppCompatActivity() {
         imageList.add(SlideModel(R.drawable.profibawaslu))
         imageSlider.setImageList(imageList, ScaleTypes.FIT)
 
-            imagelist2.add(SlideModel(R.drawable.standarlayanan))
-            imagelist2.add(SlideModel(R.drawable.informasilayanan))
-            imagelist2.add(SlideModel(R.drawable.informasipublik))
-            imageSlider2.setImageList(imagelist2, ScaleTypes.FIT)
-            init()
-            setUpTransformer()
+        imagelist2.add(SlideModel(R.drawable.standarlayanan))
+        imagelist2.add(SlideModel(R.drawable.informasilayanan))
+        imagelist2.add(SlideModel(R.drawable.informasipublik))
+        imageSlider2.setImageList(imagelist2, ScaleTypes.FIT)
 
-        val listView = findViewById<ListView>(R.id.ListView)
-        val list = mutableListOf<ImageData>()
-
-        listView.adapter = AdapterClick(this, com.denzcoskun.imageslider.R.layout.pager_row, list)
-        list.add(ImageData(R.drawable.regulasi))
-        list.add(ImageData(R.drawable.profibawaslu))
-
-        listView.setOnItemClickListener { parent:AdapterView<*>, view:View, position:Int, id:Long ->
-            if (position == 0){
-                Toast.makeText(this@Home,"Yey! di klik :), regulasi", Toast.LENGTH_LONG).show()
+        imageSlider.setOnClickListener(object : ItemClickListener, OnClickListener {
+            override fun onItemSelected(position: Int) {
+                if (position == 0){
+                    Toast.makeText(this@Home, "Klik Gambar 1", Toast.LENGTH_LONG).show()
+                }else if (position == 1){
+                    Toast.makeText(this@Home, "Klik Gambar 2", Toast.LENGTH_LONG).show()
+                }
             }
-            if (position == 1){
-                Toast.makeText(this@Home,"Yey! di klik :), Profil Bawaslu", Toast.LENGTH_LONG).show()
+
+            override fun onClick(p0: View?) {
+                TODO("Not yet implemented")
             }
-        }
+
+
+        })
+
+        init()
+        setUpTransformer()
+
+//        val listView = findViewById<ListView>(R.id.ListView)
+//        val list = mutableListOf<ImageData>()
+//
+//        listView.adapter = AdapterClick(this, com.denzcoskun.imageslider.R.layout.pager_row, list)
+//        list.add(ImageData(R.drawable.regulasi))
+//        list.add(ImageData(R.drawable.profibawaslu))
+//
+//        listView.setOnItemClickListener { parent:AdapterView<*>, view:View, position:Int, id:Long ->
+//            if (position == 0){
+//                Toast.makeText(this@Home,"Yey! di klik :), regulasi", Toast.LENGTH_LONG).show()
+//            }
+//            if (position == 1){
+//                Toast.makeText(this@Home,"Yey! di klik :), Profil Bawaslu", Toast.LENGTH_LONG).show()
+//            }
+//        }
             viewPager2.registerOnPageChangeCallback(object  : ViewPager2.OnPageChangeCallback(){
                 override fun onPageSelected(position: Int){
                     super.onPageSelected(position)
